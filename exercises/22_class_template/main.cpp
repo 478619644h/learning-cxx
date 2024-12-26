@@ -1,4 +1,5 @@
 ﻿#include "../exercise.h"
+#include <bit>
 
 // READ: 类模板 <https://zh.cppreference.com/w/cpp/language/class_template>
 
@@ -14,9 +15,10 @@ struct Tensor4D {
             shape[i] = shape_[i];
             size *= shape[i];
         }
-        // data = new T[size];
-        // std::memcpy(data, data_, size * sizeof(T));
-        std::bit_cast<T>(data_);
+        data = new T[size];
+        for (int i = 0; i < size; i++) {
+            data[i] = data_[i];
+        }
 
     }
     ~Tensor4D() {

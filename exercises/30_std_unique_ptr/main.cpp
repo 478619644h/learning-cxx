@@ -1,6 +1,6 @@
 ﻿#include "../exercise.h"
 #include <memory>
-#include <string.h>
+#include <cstring>
 #include <string>
 #include <vector>
 
@@ -69,7 +69,7 @@ int main(int argc, char **argv) {
         ASSERT(problems[i].size() == answers[i].size(), "wrong size");
         for (auto j = 0; j < problems[i].size(); ++j) {
             std::cout << problems[i][j].c_str() << std::endl;
-            ASSERT(std::strcmp(problems[i][j].c_str(), answers[i][j]) == 0, "wrong location");
+            ASSERT(strcmp(problems[i][j].c_str(), answers[i][j]) == 0, "wrong location");
         }
     }
 

@@ -14,8 +14,10 @@ struct Tensor4D {
             shape[i] = shape_[i];
             size *= shape[i];
         }
-        data = new T[size];
-        std::memcpy(data, data_, size * sizeof(T));
+        // data = new T[size];
+        // std::memcpy(data, data_, size * sizeof(T));
+        std::bit_cast<T>(data_);
+
     }
     ~Tensor4D() {
         delete[] data;

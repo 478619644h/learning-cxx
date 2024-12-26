@@ -1,5 +1,6 @@
 ﻿#include "../exercise.h"
 #include <memory>
+#include <string.h>
 #include <string>
 #include <vector>
 
